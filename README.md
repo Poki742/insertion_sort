@@ -78,9 +78,4 @@ public class insertion_sort {<br>
 <정렬 후><br>
 [0, 0, 1, 1, 1, 2, 2, 3, 5, 7]<br>
 ## 실행된 이미지<br>
-
-
-
-
-
-
+![image](https://user-images.githubusercontent.com/126844692/223329726-2d94bf5f-4476-4cf3-889e-607938bea5f9.png)
