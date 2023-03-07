@@ -36,6 +36,49 @@ Key 값 4와 두 번째 자료인 5를 비교한다.<br>5가 Key 값보다 크�
 Key 값 4와 첫 번째 자료인 2를 비교한다.<br>2가 Key 값보다 작으므로 4를 두 번째 자리에 기억시킨다.<br><br>
 ## for문<br>
 
+package 자바;<br>
+import java.util.Arrays;<br>
+public class insertion_sort {<br>
+	static int[] nums;<br>
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		nums = new int[10];
+		for (int i = 0; i < 10; i++) {
+			nums[i] = (int) (Math.random() * 10);
+		}
+		System.out.println("<정렬 전>");
+		System.out.println(Arrays.toString(nums));
+		
+		for(int i = 1; i < nums.length; i++) {
+			// 현재 선택된 원소의 값을 임시 변수에 저장해준다.
+			int temp = nums[i];
+			// 현재 원소를 기준으로 이전 원소를 탐색하기 위한 index 변수.
+			int prev = i - 1;
+			// 현재 선택된 원소가 이전 원소보다 작은 경우까지만 반복. 단, 0번째 원소까지만 비교한다.
+			while(prev >= 0 && nums[prev] > temp) {
+				// 현재 선택된 원소가 현재 탐색중인 원소보다 작다면, 해당 원소는 다음 인덱스로 미뤄버린다.
+				nums[prev + 1] = nums[prev];
+				// 다음 대상 원소를 탐색한다.
+				prev--;
+			}
+			// 탐색이 종료된 지점에 현재 선택되었던 변수의 값을 삽입해준다.
+			nums[prev + 1] = temp;
+		}
+		
+		System.out.println("<정렬 후>");
+		System.out.println(Arrays.toString(nums));
+	}
+
+}
+
+## 출력 결과<br>
+<정렬 전><br>
+[7, 1, 0, 5, 1, 1, 2, 2, 0, 3]<br>
+<정렬 후><br>
+[0, 0, 1, 1, 1, 2, 2, 3, 5, 7]<br>
+## 실행된 이미지<br>
+
 
 
 
